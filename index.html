@@ -20,11 +20,28 @@
 		canvas
 		{
 			width: 100%;
-			height: 100%;
+			height: 95%;
+		}
+
+		input
+		{
+			width: 100%;
+			height: 30px;
+			font-family: 'Indie Flower', cursive;
+			color:#ff33cc;
+			font-size: 30px;
+			border-radius: 30px;
+			border-color: #b83dff;
+			padding-left: 20px;
+			background: #a8ff78;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 		}
 	</style>
 
 	<script type="text/javascript" src="paper-full.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
 	<script type="text/paperscript" canvas="mycanvas">
 
@@ -187,6 +204,9 @@ function onFrame()
 </head>
 
 <body>
-<canvas id="mycanvas"></canvas>
+<canvas id="mycanvas">
+	
+</canvas>
+<input type="text" name="" placeholder="Type  A-Z  to  get  into  it">
 </body>
 </html>
