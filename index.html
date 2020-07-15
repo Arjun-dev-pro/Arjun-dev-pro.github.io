@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>paper</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<style type="text/css">
 		body{
 			width:100%;
@@ -20,11 +21,16 @@
 		canvas
 		{
 			width: 100%;
-			height: 95%;
+			height: 82%;
 		}
 
-		input
+		#container
 		{
+			text-align: center;
+		}
+		
+		input
+		{	margin-left: 30px;
 			width: 95%;
 			height: 30px;
 			font-family: 'Indie Flower', cursive;
@@ -39,6 +45,7 @@
 			background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 		}
+
 	</style>
 
 	<script type="text/javascript" src="paper-full.js"></script>
@@ -55,13 +62,210 @@ for(var i=0;i<26;i++)
   src: [name[i]]
 });
 }
-
+ 
    var cirArray = [];
-	function onKeyDown(event) {
-	console.log(event.key);
+
+  
+   var z = document.querySelector("input");
+   var buttonClick = document.querySelectorAll("button");
+// alert(a.textContent);console.log(a.textContent);
+
+for(var i=0;i<buttonClick.length;i++)
+{	
 	
-	
-	
+	var width = paper.view.size.width;
+    var height = paper.view.size.height;
+
+
+
+	buttonClick[i].addEventListener("click",function(){
+
+	var random = Number(Math.floor(Math.random()*26));
+   	//alert("asdasd");
+   	 var a1 = Number(Math.floor(Math.random()*255));
+			var b1 = Number(Math.floor(Math.random()*255));
+			var c1 = Number(Math.floor(Math.random()*255));
+			// When a key is pressed, set the content of the text item:
+			//text.content = 'The ' + event.key + ' key was pressed!';
+			var a = Number(Math.floor(Math.random()*width));
+			var b = Number(Math.floor(Math.random()*height));
+			var circle = new Path.Circle(new Point(a, b),500);
+
+	var myStyle = {
+	strokeColor: '#42cbf5',
+	strokeWidth: 5
+	};
+	circle.style = myStyle;
+	circle.fillColor = "rgba("+a1+", "+b1+", "+c1+")";
+	cirArray.push(circle);
+
+
+	var a = this.textContent.toLowerCase();
+
+	switch (a) {
+
+  	case 'a':
+  	z.value = z.value + a;
+    sounding[0].play();
+
+    break;
+
+  	case 'b':
+  	z.value = z.value+ a;
+    sounding[1].play();
+    break;
+
+    case 'c':
+    z.value = z.value+ a;
+    sounding[2].play();
+    break;
+
+    case 'd':
+    z.value = z.value+ a;
+    sounding[3].play();
+    break;
+
+    case 'e':
+    z.value = z.value+ a;
+    sounding[4].play();
+    break;
+
+    case 'f':
+    z.value = z.value+ a;
+    sounding[5].play();
+    break;
+
+    case 'g':
+    z.value = z.value+ a;
+    sounding[6].play();
+    break;
+
+    case 'h':
+    z.value = z.value+ a;
+    sounding[7].play();
+    break;
+
+    case 'i':
+    z.value = z.value+ a;
+    sounding[8].play();
+    break;
+
+    case 'j':
+    z.value = z.value+ a;
+    sounding[9].play();
+    break;
+
+
+    case 'k':
+    z.value = z.value+ a;
+    sounding[10].play();
+    break;
+
+
+    case 'l':
+    z.value = z.value+ a;
+    sounding[11].play();
+    break;
+
+    case 'm':
+    z.value = z.value+ a;
+    sounding[12].play();
+    break;
+
+    case 'n':
+    z.value = z.value+ a;
+    sounding[13].play();
+    break;
+
+    case 'o':
+    z.value = z.value+ a;
+    sounding[14].play();
+    break;
+
+     case 'p':
+     z.value = z.value+ a;
+    sounding[15].play();
+    break;
+
+     case 'q':
+     z.value = z.value+ a;
+    sounding[16].play();
+    break;
+
+     case 'r':
+     z.value = z.value+ a;
+    sounding[17].play();
+    break;
+
+     case 's':
+     z.value = z.value+ a;
+    sounding[18].play();
+    break;
+
+     case 't':
+     z.value = z.value+ a;
+    sounding[19].play();
+    break;
+
+     case 'u':
+     z.value = z.value+ a;
+    sounding[20].play();
+    break;
+
+     case 'v':
+     z.value = z.value+ a;
+    sounding[21].play();
+    break;
+
+
+     case 'w':
+     z.value = z.value+ a;
+    sounding[22].play();
+    break;
+
+     case 'x':
+     z.value = z.value+ a;
+    sounding[23].play();
+    break;
+
+     case 'y':
+     z.value = z.value+ a;
+    sounding[24].play();
+    break;
+
+     case 'z':
+     z.value = z.value+ a;
+    sounding[25].play();
+    break;
+}
+ 	
+});	
+}
+ 
+
+   function onKeyDown(event) {
+
+    var width = paper.view.size.width;
+    var height = paper.view.size.height;
+	var random = Number(Math.floor(Math.random()*26));
+   	//alert("asdasd");
+   	 var a1 = Number(Math.floor(Math.random()*255));
+			var b1 = Number(Math.floor(Math.random()*255));
+			var c1 = Number(Math.floor(Math.random()*255));
+			// When a key is pressed, set the content of the text item:
+			//text.content = 'The ' + event.key + ' key was pressed!';
+			var a = Number(Math.floor(Math.random()*width));
+			var b = Number(Math.floor(Math.random()*height));
+			var circle = new Path.Circle(new Point(a, b),500);
+
+	var myStyle = {
+	strokeColor: '#42cbf5',
+	strokeWidth: 5
+	};
+	circle.style = myStyle;
+	circle.fillColor = "rgba("+a1+", "+b1+", "+c1+")";
+	cirArray.push(circle);
+
 	switch (event.key) {
 
   	case 'a':
@@ -171,26 +375,10 @@ for(var i=0;i<26;i++)
     sounding[25].play();
     break;
 }
+}
 
-	        var a1 = Number(Math.floor(Math.random()*255));
-			var b1 = Number(Math.floor(Math.random()*255));
-			var c1 = Number(Math.floor(Math.random()*255));
-			// When a key is pressed, set the content of the text item:
-			//text.content = 'The ' + event.key + ' key was pressed!';
-			var a = Number(Math.floor(Math.random()*1500));
-			var b = Number(Math.floor(Math.random()*1000));
-			var circle = new Path.Circle(new Point(a, b),500);
 
-	var myStyle = {
-	strokeColor: '#42cbf5',
-	strokeWidth: 5
-	};
-
-	circle.style = myStyle;
-	circle.fillColor = "rgba("+a1+", "+b1+", "+c1+")";
-	cirArray.push(circle);
-
-} 
+	
 
 function onFrame()
 {
@@ -205,8 +393,45 @@ function onFrame()
 </head>
 
 <body>
-<canvas id="mycanvas">	
+<canvas id="mycanvas">
+	
 </canvas>
-<input type="text" name="" placeholder="Type  A-Z  to  get into music.............designed by Arjun">
+<div class="container" id="container">
+	<div class="row d-flex justify-content-center" id ="overlay">
+		<button type="button" class="btn btn-outline-primary">A</button>
+		<button type="button" class="btn btn-outline-primary">B</button>
+		<button type="button" class="btn btn-outline-primary">C</button>
+		<button type="button" class="btn btn-outline-primary">D</button>
+		<button type="button" class="btn btn-outline-primary">E</button>
+		<button type="button" class="btn btn-outline-primary">F</button>
+		<button type="button" class="btn btn-outline-primary">G</button>
+		<button type="button" class="btn btn-outline-primary">H</button>
+		<button type="button" class="btn btn-outline-primary">I</button>
+		<button type="button" class="btn btn-outline-primary">J</button>
+	</div >
+
+	<div class="row d-flex justify-content-center" id ="overlay">
+		<button type="button" class="btn btn-outline-primary">K</button>
+		<button type="button" class="btn btn-outline-primary">L</button>
+		<button type="button" class="btn btn-outline-primary">M</button>
+		<button type="button" class="btn btn-outline-primary">N</button>
+		<button type="button" class="btn btn-outline-primary">O</button>
+		<button type="button" class="btn btn-outline-primary">P</button>
+		<button type="button" class="btn btn-outline-primary">Q</button>
+		<button type="button" class="btn btn-outline-primary">R</button>
+		<button type="button" class="btn btn-outline-primary">S</button>
+		<button type="button" class="btn btn-outline-primary">T</button>
+	</div>
+
+	<div class="row d-flex justify-content-center" id ="overlay">
+		<button type="button" class="btn btn-outline-primary">U</button>
+		<button type="button" class="btn btn-outline-primary">V</button>
+		<button type="button" class="btn btn-outline-primary">W</button>
+		<button type="button" class="btn btn-outline-primary">X</button>
+		<button type="button" class="btn btn-outline-primary">Y</button>
+		<button type="button" class="btn btn-outline-primary">Z</button>
+	</div>
+</div>
+<input type="text" name="" placeholder="Type  A-Z  for music .......  by Arjun">
 </body>
 </html>
