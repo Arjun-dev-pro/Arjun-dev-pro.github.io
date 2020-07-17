@@ -3,6 +3,7 @@
 <head>
 	<title>paper</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
 	<style type="text/css">
 		body{
 			width:100%;
@@ -33,7 +34,7 @@
 		{	margin-left: 10px;
 			width: 95%;
 			height: 30px;
-			font-family: 'Indie Flower', cursive;
+			font-family: 'Fondamento', cursive;
 			color:#ff33cc;
 			font-size: 30px;
 			border-radius: 30px;
@@ -85,9 +86,9 @@ for(var i=0;i<26;i++)
    var num2;
    var num3=0;
 
+var shape = 0;
 
-
-   function hello(n1, n2, r1, r2, n3, name)
+   function hello(n1, n2, r1, r2, n3, name, shape)
    {
     num1 = n1;
     num2 = n2;
@@ -101,9 +102,16 @@ for(var i=0;i<26;i++)
             //text.content = 'The ' + event.key + ' key was pressed!';
             var a = Number(Math.floor(Math.random()*width));
             var b = Number(Math.floor(Math.random()*height));
-
+            var circle;
             if(name == "cir"){ 
-            var circle = new Path.Circle(new Point(a, b),300);
+            if(shape==0)
+            {
+                 circle = new Path.Circle(new Point(a, b),100);
+            }else
+            {
+             circle = new Path.Circle(new Point(a, b),300); 
+            }
+            
 
     var myStyle = {
     strokeColor: '#42cbf5',
@@ -115,8 +123,20 @@ for(var i=0;i<26;i++)
     }
     else
     {
-        var a = Number(Math.floor(Math.random()*width-300));
+        if(shape==0)
+        {
+            var a = Number(Math.floor(Math.random()*width));
+            var b = Number(Math.floor(Math.random()*height));
+            r1 = r1*(50/100);
+            r2 = r2*(50/100);
+
+        }
+        else
+        {
+            var a = Number(Math.floor(Math.random()*width-300));
             var b = Number(Math.floor(Math.random()*height - 300));
+        }
+        
         var rect = new Path.Rectangle({
     point:[a, b],
     size:[r1,r2]
@@ -140,7 +160,7 @@ for(var i=0;i<buttonClick.length;i++)
 {   
     
 
-
+    shape = 0;
 
 
     buttonClick[i].addEventListener("click",function(){
@@ -153,31 +173,31 @@ for(var i=0;i<buttonClick.length;i++)
     switch (a) {
 
     case 'a':
-
-    hello(0,5,400,100,1,"cir");
+    shape = 0;
+    hello(0,5,1000,300,1,"cir",shape);
     z.value = z.value + this.textContent ;
     sounding[0].play();
 
     break;
 
     case 'b':
-
-    hello(0,5,100,400,0,"rect");
+    shape = 0;
+    hello(0,5,300,1000,0,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[1].play();
     break;
 
     case 'c':
 
-
-    hello(5,-5,1000,300,0,"rect");
+    shape = 0;
+    hello(5,-5,1000,300,0,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[2].play();
     break;
 
     case 'd':
-
-    hello(5,5,1000,300,1,"rect");
+    shape = 0;
+    hello(5,5,1000,300,1,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[3].play();
     break;
@@ -185,144 +205,159 @@ for(var i=0;i<buttonClick.length;i++)
 
     case 'e':
 
-
-    hello(5,5,400,30,2,"rect");
+    shape = 0;
+    hello(5,5,400,30,2,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[4].play();
     break;
 
     case 'f':
-
-    hello(0,-5,1000,300,0,"rect");
+    shape = 0;
+    hello(0,-5,1000,300,0,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[5].play();
     break;
 
     case 'g':
-
-    hello(0,5,1000,300,0,"cir");
+    shape = 0;
+    hello(0,5,1000,300,0,"cir",shape);
     z.value = z.value + this.textContent ;
     sounding[6].play();
     break;
 
     case 'h':
     
-
-    hello(-5,5,1000,300,1,"rec");
+    shape = 0;
+    hello(-5,5,1000,300,1,"rec",shape);
     z.value = z.value + this.textContent ;
     sounding[7].play();
     break;
 
     case 'i':
-
-    hello(-5,-5,100,500,0,"cir");
+    shape = 0;
+    hello(-5,-5,100,500,0,"cir",shape);
     z.value = z.value + this.textContent ;
     sounding[8].play();
     break;
 
     case 'j':
-
-    hello(0,0,100,500,1,"cir");
+    shape = 0;
+    hello(0,0,100,500,1,"cir",shape);
     z.value = z.value + this.textContent ;
     sounding[9].play();
     break;
 
 
     case 'k':
-
-    hello(0,5,100,500,0,"rec");
-   z.value = z.value + this.textContent ;
+    shape = 0;
+    hello(0,5,100,500,0,"rec",shape);
+    z.value = z.value + this.textContent ;
     sounding[10].play();
     break;
 
 
     case 'l':
-    hello(5,0,300,1000,0,"rect");
+    shape = 0;
+    hello(5,0,300,1000,0,"rect",shape);
     z.value = z.value + this.textContent ;
     sounding[11].play();
     break;
 
     case 'm':
-    hello(0,-5,300,1000,0,"rect");
+    shape = 0;
+    hello(0,-5,300,1000,0,"rect",shape);
     z.value = z.value+ a;
     sounding[12].play();
     break;
 
     case 'n':
-    hello(5,5,1000,300,1,"cir");
+    shape = 0;
+    hello(5,5,1000,300,1,"cir",shape);
     z.value = z.value+ a;
     sounding[13].play();
     break;
 
     case 'o':
-    hello(5,0,1000,300,1,"rect");
+    shape = 0;
+    hello(5,0,1000,300,1,"rect",shape);
     z.value = z.value+ a;
     sounding[14].play();
     break;
 
      case 'p':
-     hello(-10,-10,1000,300,1,"rect");
+     shape = 0;
+     hello(-10,-10,1000,300,1,"rect",shape);
      z.value = z.value+ a;
     sounding[15].play();
     break;
 
      case 'q':
-     hello(-10,-10,1000,300,1,"cir");
+     shape = 0;
+     hello(-10,-10,1000,300,1,"cir",shape);
      z.value = z.value+ a;
     sounding[16].play();
     break;
 
      case 'r':
-     hello(5,5,1000,300,2,"rect");
+     shape = 0;
+     hello(5,5,1000,300,2,"rect",shape);
      z.value = z.value+ a;
     sounding[17].play();
     break;
 
      case 's':
-     hello(0,-5,1000,300,2,"rect");
+     shape = 0;
+     hello(0,-5,1000,300,2,"rect",shape);
      z.value = z.value+ a;
     sounding[18].play();
     break;
 
      case 't':
-     hello(-5,0,1000,300,2,"rect");
+     shape = 0;
+     hello(-5,0,1000,300,2,"rect",shape);
      z.value = z.value+ a;
     sounding[19].play();
     break;
 
      case 'u':
-     hello(-5,0,1000,300,2,"cir");
+     shape = 0;
+     hello(-5,0,1000,300,2,"cir",shape);
      z.value = z.value+ a;
     sounding[20].play();
     break;
 
      case 'v':
-     hello(-5,0,1000,300,1,"rec");
+     shape = 0;
+     hello(-5,0,1000,300,1,"rec",shape);
      z.value = z.value+ a;
     sounding[21].play();
     break;
 
 
      case 'w':
-     hello(-5,0,1000,300,1,"cir");
+     shape = 0;
+     hello(-5,0,1000,300,1,"cir",shape);
      z.value = z.value+ a;
     sounding[22].play();
     break;
 
      case 'x':
-     hello(5,5,1000,300,1,"rect");
+     shape = 0;
+     hello(5,5,1000,300,1,"rect",shape);
      z.value = z.value+ a;
     sounding[23].play();
     break;
 
      case 'y':
-     hello(-5,10,1000,300,2,"rec");
+     shape = 0;
+     hello(-5,10,1000,300,2,"rec",shape);
      z.value = z.value+ a;
     sounding[24].play();
     break;
 
      case 'z':
-     hello(-5,10,1000,300,0,"cir");
+     shape = 0;
+     hello(-5,10,1000,300,0,"cir",shape);
      z.value = z.value+ a;
     sounding[25].play();
     break;
@@ -335,13 +370,13 @@ for(var i=0;i<buttonClick.length;i++)
    function onKeyDown(event) {
 
    var char = event.key;
- 
+    shape = 1;
 
     switch (event.key) {
 
     case 'a':
 
-    hello(0,5,1000,300,1,"cir");
+    hello(0,5,1000,300,1,"cir",shape);
     z.value = z.value + char ;
     sounding[0].play();
 
@@ -349,7 +384,7 @@ for(var i=0;i<buttonClick.length;i++)
 
     case 'b':
 
-    hello(0,5,300,1000,0,"rect");
+    hello(0,5,300,1000,0,"rect",shape);
     z.value = z.value + char ;
     sounding[1].play();
     break;
@@ -357,14 +392,14 @@ for(var i=0;i<buttonClick.length;i++)
     case 'c':
 
 
-    hello(5,-5,1000,300,0,"rect");
+    hello(5,-5,1000,300,0,"rect",shape);
     z.value = z.value + char ;
     sounding[2].play();
     break;
 
     case 'd':
 
-    hello(5,5,1000,300,1,"rect");
+    hello(5,5,1000,300,1,"rect",shape);
     z.value = z.value + char ;
     sounding[3].play();
     break;
@@ -373,21 +408,21 @@ for(var i=0;i<buttonClick.length;i++)
     case 'e':
 
 
-    hello(5,5,400,30,2,"rect");
+    hello(5,5,400,30,2,"rect",shape);
     z.value = z.value + char ;
     sounding[4].play();
     break;
 
     case 'f':
 
-    hello(0,-5,1000,300,0,"rect");
+    hello(0,-5,1000,300,0,"rect",shape);
     z.value = z.value + char ;
     sounding[5].play();
     break;
 
     case 'g':
 
-    hello(0,5,1000,300,0,"cir");
+    hello(0,5,1000,300,0,"cir",shape);
     z.value = z.value + char ;
     sounding[6].play();
     break;
@@ -395,21 +430,21 @@ for(var i=0;i<buttonClick.length;i++)
     case 'h':
     
 
-    hello(-5,5,1000,300,1,"rec");
+    hello(-5,5,1000,300,1,"rec",shape);
     z.value = z.value + char ;
     sounding[7].play();
     break;
 
     case 'i':
 
-    hello(-5,-5,100,500,0,"cir");
+    hello(-5,-5,100,500,0,"cir",shape);
     z.value = z.value + char ;
     sounding[8].play();
     break;
 
     case 'j':
 
-    hello(0,0,100,500,1,"cir");
+    hello(0,0,100,500,1,"cir",shape);
     z.value = z.value + char ;
     sounding[9].play();
     break;
@@ -417,99 +452,99 @@ for(var i=0;i<buttonClick.length;i++)
 
     case 'k':
 
-    hello(0,5,100,500,0,"rec");
+    hello(0,5,100,500,0,"rec",shape);
    z.value = z.value + char ;
     sounding[10].play();
     break;
 
 
     case 'l':
-    hello(5,0,300,1000,0,"rect");
+    hello(5,0,300,1000,0,"rect",shape);
     z.value = z.value + char ;
     sounding[11].play();
     break;
 
     case 'm':
-    hello(0,-5,300,1000,0,"rect");
+    hello(0,-5,300,1000,0,"rect",shape);
     z.value = z.value + char ;
     sounding[12].play();
     break;
 
     case 'n':
-    hello(5,5,1000,300,1,"cir");
+    hello(5,5,1000,300,1,"cir",shape);
     z.value = z.value + char ;
     sounding[13].play();
     break;
 
     case 'o':
-    hello(5,0,1000,300,1,"rect");
+    hello(5,0,1000,300,1,"rect",shape);
     z.value = z.value + char ;
     sounding[14].play();
     break;
 
      case 'p':
-     hello(-10,-10,1000,300,1,"rect");
+     hello(-10,-10,1000,300,1,"rect",shape);
      z.value = z.value + char ;
     sounding[15].play();
     break;
 
      case 'q':
-     hello(-10,-10,1000,300,1,"cir");
+     hello(-10,-10,1000,300,1,"cir",shape);
     z.value = z.value + char ;
     sounding[16].play();
     break;
 
      case 'r':
-     hello(5,5,1000,300,2,"rect");
+     hello(5,5,1000,300,2,"rect",shape);
      z.value = z.value + char ;
     sounding[17].play();
     break;
 
      case 's':
-     hello(0,-5,1000,300,2,"rect");
+     hello(0,-5,1000,300,2,"rect",shape);
      z.value = z.value + char ;
     sounding[18].play();
     break;
 
      case 't':
-     hello(-5,0,1000,300,2,"rect");
+     hello(-5,0,1000,300,2,"rect",shape);
      z.value = z.value + char ;
     sounding[19].play();
     break;
 
      case 'u':
-     hello(-5,0,1000,300,2,"cir");
+     hello(-5,0,1000,300,2,"cir",shape);
     z.value = z.value + char ;
     sounding[20].play();
     break;
 
      case 'v':
-     hello(-5,0,1000,300,1,"rec");
+     hello(-5,0,1000,300,1,"rec",shape);
      z.value = z.value + char ;
     sounding[21].play();
     break;
 
 
      case 'w':
-     hello(-5,0,1000,300,1,"cir");
+     hello(-5,0,1000,300,1,"cir",shape);
      z.value = z.value + char ;
     sounding[22].play();
     break;
 
      case 'x':
-     hello(5,5,1000,300,1,"rect");
+     hello(5,5,1000,300,1,"rect",shape);
     z.value = z.value + char ;
     sounding[23].play();
     break;
 
      case 'y':
-     hello(-5,10,1000,300,2,"rec");
+     hello(-5,10,1000,300,2,"rec",shape);
      z.value = z.value + char ;
     sounding[24].play();
     break;
 
      case 'z':
-     hello(-5,10,1000,300,0,"cir");
+     hello(-5,10,1000,300,0,"cir",shape);
      z.value = z.value + char ;
     sounding[25].play();
     break;
@@ -517,8 +552,7 @@ for(var i=0;i<buttonClick.length;i++)
 }
 
 
-
-	
+    
 
 function onFrame()
 {
