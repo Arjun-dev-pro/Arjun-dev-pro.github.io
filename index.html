@@ -266,70 +266,70 @@ for(var i=0;i<buttonClick.length;i++)
     case 'm':
     shape = 0;
     hello(0,-5,300,1000,0,"rect",shape);
-    z.value = z.value+ a;
+    z.value = z.value + this.textContent ;
     sounding[12].play();
     break;
 
     case 'n':
     shape = 0;
     hello(5,5,1000,300,1,"cir",shape);
-    z.value = z.value+ a;
+    z.value = z.value + this.textContent ;
     sounding[13].play();
     break;
 
     case 'o':
     shape = 0;
     hello(5,0,1000,300,1,"rect",shape);
-    z.value = z.value+ a;
+    z.value = z.value + this.textContent ;
     sounding[14].play();
     break;
 
      case 'p':
      shape = 0;
      hello(-10,-10,1000,300,1,"rect",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[15].play();
     break;
 
      case 'q':
      shape = 0;
      hello(-10,-10,1000,300,1,"cir",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[16].play();
     break;
 
      case 'r':
      shape = 0;
      hello(5,5,1000,300,2,"rect",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[17].play();
     break;
 
      case 's':
      shape = 0;
      hello(0,-5,1000,300,2,"rect",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[18].play();
     break;
 
      case 't':
      shape = 0;
      hello(-5,0,1000,300,2,"rect",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[19].play();
     break;
 
      case 'u':
      shape = 0;
      hello(-5,0,1000,300,2,"cir",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[20].play();
     break;
 
      case 'v':
      shape = 0;
      hello(-5,0,1000,300,1,"rec",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[21].play();
     break;
 
@@ -337,28 +337,28 @@ for(var i=0;i<buttonClick.length;i++)
      case 'w':
      shape = 0;
      hello(-5,0,1000,300,1,"cir",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[22].play();
     break;
 
      case 'x':
      shape = 0;
      hello(5,5,1000,300,1,"rect",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[23].play();
     break;
 
      case 'y':
      shape = 0;
      hello(-5,10,1000,300,2,"rec",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[24].play();
     break;
 
      case 'z':
      shape = 0;
      hello(-5,10,1000,300,0,"cir",shape);
-     z.value = z.value+ a;
+     z.value = z.value + this.textContent ;
     sounding[25].play();
     break;
 }
@@ -369,7 +369,7 @@ for(var i=0;i<buttonClick.length;i++)
 
    function onKeyDown(event) {
 
-   var char = event.key;
+   var char = event.key.toUpperCase();
     shape = 1;
 
     switch (event.key) {
